@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run Reviews</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Run Reviews</h2>
+
+    <div id="totals">
+      <p id="total-mileage-text">Total Mileage: 0</p>
+      <p id="longest-run-text">Longest Run: 0</p>
+    </div>
+
+    <hr />
+
+    <div id="add-form">
+      <p>Title:</p>
+      <input id="input-run-title" />
+      <p>Distance:</p>
+      <input id="input-run-distance" />
+      <p>Intensity:</p>
+      <input id="input-run-intensity" />
+      <p>Description:</p>
+      <textarea id="input-run-description"></textarea>
+      <p>Run With:</p>
+      <input id="input-run-with" />
+      <p>Ground Type:</p>
+      <input id="input-run-ground" />
+      <button id="add-review-button">Add a Run</button>
+      <button id="save-review-button">Save</button>
+    </div>
+
+    <section id="run-review-wrapper"></section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+h2 {
+  font-family: "Bungee Tint", sans-serif;
+  font-weight: 400;
+  font-size: xx-large;
+  color: #333;
+}
+
+hr {
+  border: 0.5px solid #ddd;
+  margin-bottom: 20px;
+}
+
+/* Totals Display */
+#totals {
+  margin: 20px 0;
+}
+
+#total-mileage-text,
+#longest-run-text {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Form Styles */
+#add-form {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-form input,
+#add-form textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#add-form button {
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #db8141;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#add-form button:hover {
+  background-color: #6e260e;
+}
+
+/* Run Review Container */
+#run-review-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.run-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.run-container p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Miscellaneous */
+#totals-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.trophy-container {
+  background-color: #e9d558;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  color: #fff;
+}
+
+.trophy-container span {
+  font-size: 40px;
+}
+
+/* Button styling */
+button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  padding: 10px 15px; /* Some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Get it inline */
+  font-size: 16px; /* Set font size */
+  margin: 4px 2px; /* Add some margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly increase size */
+}
+
+/* Delete button specific styling */
+button.delete {
+  background-color: #f44336; /* Red background for delete */
+}
+
+button.delete:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+.run-container {
+  text-align: center;
+}
