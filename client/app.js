@@ -190,6 +190,6 @@ function addNewReview() {
 
 addReviewButton.onclick = () => {
   addNewReview();
-  playSound();
+  // playSound();
 };
 loadRunsFromServer();
