@@ -7,9 +7,18 @@ app = Flask(__name__)
 def handle_cors_options(run_id):
     return "", 204, {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "PUT, DELETE",
+        "Access-Control-Allow-Methods": "PUT, DELETE, GET",
         "Access-Control-Allow-Headers": "Content-Type"
     }
+
+@app.route("/runs/<int:run_id>", methods=["GET"])
+def get_run(run_id):
+    db = RunsDB("runs_db.db")  # Updated database filename
+    run = db.getRun(run_id)  # Assumes getRun method fetches a run by id
+    if run:
+        return run, 200, {"Access-Control-Allow-Origin": "*"}
+    else:
+        return f"Run {run_id} not found", 404, {"Access-Control-Allow-Origin": "*"}
 
 @app.route("/runs", methods=["GET"])
 def retrieve_runs():
@@ -51,13 +60,13 @@ def update_run(run_id):
         db.updateRun(run_id, distance, title, intensity, description, with_person, ground)
         return "Updated", 200, {"Access-Control-Allow-Origin": "*"}
     else:
-        return f"Run {run_id} Not found", 404, {"Access-Control-Allow-Origin": "*"}
+        return f"Run {run_id} not found", 404, {"Access-Control-Allow-Origin": "*"}
 
 @app.route("/runs/<int:run_id>", methods=["DELETE"])
 def delete_run(run_id):
     db = RunsDB("runs_db.db")  # Updated database filename
     if db.getRun(run_id) is None:
-        return f"Run {run_id} Not found", 404, {"Access-Control-Allow-Origin": "*"}
+        return f"Run {run_id} not found", 404, {"Access-Control-Allow-Origin": "*"}
     else: 
         db.deleteRun(run_id)  # Updated method name to deleteRun
         return "Deleted", 200, {"Access-Control-Allow-Origin": "*"}
