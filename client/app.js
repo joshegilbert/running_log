@@ -1,5 +1,8 @@
 console.log("connected");
 
+const apiUrl =
+  window.location.protocol === "file:" ? "http://localhost:8080" : "";
+
 // Elements and Variables
 let runReviewWrapper = document.getElementById("run-review-wrapper");
 let editId = null;
@@ -95,7 +98,7 @@ function addRunReview(data) {
       "&ground=" +
       encodeURIComponent(inputRunGround.value);
 
-    fetch(`http://localhost:8080/runs/${editId}`, {
+    fetch(`${apiUrl}/runs/${editId}`, {
       method: "PUT",
       body: editData,
       headers: {
@@ -113,7 +116,7 @@ function addRunReview(data) {
     if (
       confirm(`Are you sure you want to delete the run "${data["title"]}"?`)
     ) {
-      fetch(`http://localhost:8080/runs/${data["id"]}`, {
+      fetch(`${apiUrl}/runs/${data["id"]}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -137,7 +140,7 @@ function updateTotals() {
 
 // Load all runs from server
 function loadRunsFromServer() {
-  fetch("http://localhost:8080/runs")
+  fetch(`${apiUrl}/runs`)
     .then((response) => response.json())
     .then((data) => {
       data.forEach(addRunReview);
@@ -175,7 +178,7 @@ function addNewReview() {
     "&ground=" +
     encodeURIComponent(inputRunGround.value);
 
-  fetch("http://localhost:8080/runs", {
+  fetch(`${apiUrl}/runs`, {
     method: "POST",
     body: data,
     headers: {
