@@ -49,8 +49,8 @@ CREATE TABLE runs (
 ## Running the Application
 
 1. Clone the repository.
-2. Install any required dependencies.
-3. Start the server and open the application in your browser.
+2. Go to the servery and run it on python3
+3. Open the html on the web
 
 ## Project Structure
 
